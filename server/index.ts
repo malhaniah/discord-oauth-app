@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import chalk from "chalk";
 import router from "./routers";
+import cookieParser from 'cookie-parser';
 import { config } from "dotenv";
 
 async function main() {
@@ -10,7 +11,8 @@ async function main() {
   config();
 
   app.use(cors());
-  app.use(express.urlencoded({ extended: true}));
+  app.use(express.urlencoded({ extended: true }));
+  app.use(cookieParser());
   app.use("/", router);
 
   app.listen(process.env.PORT, () =>

@@ -1,5 +1,5 @@
 import { config } from "dotenv";
-import { CredentialsDataType } from "../types";
+import { CredentialsDataType, UserCredentialsDataType } from "../types";
 
 export function credentialsData({
   client_id,
@@ -18,8 +18,18 @@ export function credentialsData({
   return params;
 }
 
+export function userCredentialsData({
+  Authorization,
+}: UserCredentialsDataType) {
+  return {
+    headers: {
+      Authorization: String(Authorization),
+      "Accept-Encoding": "*",
+    },
+  };
+}
 
-export function axiosConfig(){
+export function axiosConfig() {
   return {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",

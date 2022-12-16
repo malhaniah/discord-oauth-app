@@ -13,3 +13,7 @@ export interface CredentialsDataType {
   code: string;
   redirect_uri: string;
 }
+
+export interface UserCredentialsDataType {
+  Authorization: string;
+}
