@@ -3,6 +3,8 @@ import { getCredentials, getUser } from "../controllers";
 
 const router = Router();
 
+
+router.get('/')
 router.get('/api/callback', getCredentials);
 router.get('/api/user', getUser)
 

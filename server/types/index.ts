@@ -1,3 +1,13 @@
+import 'express-session';
+
+declare module 'express-session' {
+  export interface SessionData {
+    auth_key: string;
+    auth_type: string;
+
+  }
+}
+
 export interface AuthCredentials {
   access_token: string;
   refresh_token: string;
